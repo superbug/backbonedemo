@@ -13,14 +13,14 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-// connection.query('SELECT * from  wine', function(err, rows, fields) {
-//   if (err) throw err;
-//   console.log(rows);
-//   data = rows;
-// });
+connection.query('SELECT * from  `ent_GuoJiaAnJianZongJu_datapool_XingZhengZhiFa`', function(err, rows, fields) {
+  if (err) throw err;
+  console.log(rows);
+  data = rows;
+});
 
-// connection.end();
+connection.end();
 console.log(data);
 exports.index = function(req, res){
   res.render('index', { title: 'Express' });
-};
+}; 

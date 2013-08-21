@@ -1,11 +1,25 @@
+var MyApp = MyApp || {};
+
+MyApp.init = function() {
+    var temp = new this.Router.index();
+    Backbone.history.start();
+};
+
 $(function() {
-        $('#btn').click(function() {
-            $('#dialog').dialog({
-                buttons: {
-                    ' 关闭': function() {
-                        $(this).dialog('close');
-                    }
+    MyApp.init();
+});
+
+
+
+
+$(function() {
+    $('#btn').click(function() {
+        $('#dialog').dialog({
+            buttons: {
+                '关闭': function() {
+                    $(this).dialog('close');
                 }
-            });
-        }); 
+            }
+        });
+    }); 
 });

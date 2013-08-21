@@ -10,3 +10,25 @@ a {
 #dialog {
     display:  none;
 }
+
+#categorylist {
+    background-color: lightgrey;
+    display: inline-block;
+    width: 300px;
+    float: left;
+    height: 600px;
+}
+
+#booklist {
+    background-color: lightgrey;
+    margin-left: 320px;
+    height: 600px;
+}
+
+.list {
+    width: 100%;
+}
+
+.list td {
+    border: 1px solid grey;
+}
