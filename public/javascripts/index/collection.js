@@ -4,7 +4,7 @@ MyApp.Collection = (function(app) {
 
     var exports = {};
 
-    exports.category = Backbone.Collection.extend({
+    exports.categories = Backbone.Collection.extend({
         
         initialize: function() {
 
@@ -12,11 +12,11 @@ MyApp.Collection = (function(app) {
 
     });
 
-    exports.book = Backbone.Collection.extend({
+    exports.cars = Backbone.Collection.extend({
         
-        initialize: function() {
+        model: app.Model.car,
 
-        }
+        url: '/cars'
 
     });
 

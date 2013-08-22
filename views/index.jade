@@ -18,15 +18,34 @@ block content
         li 
             a(href='#!/44444444')  4444444444
 
-
-  div#booklist
+  div#carlist
+    input(type='text', name='filterCar')
+    button#search search
     table.list
         tr
-            td 11
-            td 22
-            td 33
-        tr
-            td 44
-            td 55
-            td 66
+            th id
+            th name
+            th color
+            th size
+            th opt
+
+        //- tr
+        //-     td 11
+        //-     td 22
+        //-     td 33
+        //- tr
+        //-     td 44
+        //-     td 55
+        //-     td 66
+
+  script(type='text/template', id='car-template')
+      td <%- id %>
+      td <%- name %>
+      td <%- color %>
+      td <%- size %>
+      td 
+        a.btn edit 
+        a.btn delete
+
+
 

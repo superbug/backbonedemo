@@ -19,7 +19,7 @@ a {
     height: 600px;
 }
 
-#booklist {
+#carlist {
     background-color: lightgrey;
     margin-left: 320px;
     height: 600px;
@@ -31,4 +31,9 @@ a {
 
 .list td {
     border: 1px solid grey;
+}
+
+.btn {
+  margin: 5px;
+  cursor: pointer;
 }

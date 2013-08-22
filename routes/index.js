@@ -22,5 +22,5 @@ connection.query('SELECT * from  `ent_GuoJiaAnJianZongJu_datapool_XingZhengZhiFa
 connection.end();
 console.log(data);
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Cars' });
 }; 

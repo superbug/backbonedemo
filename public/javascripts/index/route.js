@@ -16,7 +16,13 @@ MyApp.Router = (function(app) {
         },
 
         showCategory: function(category) {
-            console.log(category);
+            if (app.carCollectionInstance) {
+                app.carCollectionInstance.reset([]);
+                $('#carlist tbody').html('');
+            }
+            app.carCollectionInstance = new app.Collection.cars();
+            app.carCollectionInstance.url = '/cars/' + category;
+            app.carListViewInstance = new app.View.carList();
         }
 
     })

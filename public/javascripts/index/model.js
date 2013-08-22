@@ -4,7 +4,7 @@ MyApp.Model = (function(app) {
 
     var exports = {};
 
-    exports.category = Backbone.View.extend({
+    exports.category = Backbone.Model.extend({
         
         initialize: function() {
 
@@ -12,10 +12,10 @@ MyApp.Model = (function(app) {
 
     });
 
-    exports.book = Backbone.View.extend({
+    exports.car = Backbone.Model.extend({
         
-        initialize: function() {
-
+        initialize: function(aa) {
+            
         }
 
     });

@@ -6,6 +6,7 @@
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
+var cars = require('./routes/cars');
 var http = require('http');
 var path = require('path');
 var mysql = require('mysql');
@@ -30,6 +31,10 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/cars/:id', cars.cars);
+app.delete('/cars/:id/:q', cars.deletecar);
+app.post('/cars/:id/:q', cars.addcar);
+app.put('/cars/:id/:q', cars.updatecar);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
