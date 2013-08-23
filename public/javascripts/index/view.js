@@ -30,7 +30,6 @@ MyApp.View = (function(app) {
             this.input = this.$el.find('input[name="filterCar"]');
             this.listenTo(app.carCollectionInstance, 'add', this.addCar);
             this.listenTo(app.carCollectionInstance, 'reset', this.addAllCars);
-            // this.listenTo(app.carCollectionInstance, 'all', this.render);
             app.carCollectionInstance.fetch({reset: true});
         },
 
@@ -62,8 +61,8 @@ MyApp.View = (function(app) {
         tagName:  'tr',
 
         events: {
-            'click .add': 'addCar',
-            'click .delete': 'deleteCar'
+            'click .edit': 'editCar',
+            'click .delete': 'destroyCar'
         },
 
         initialize: function() {
@@ -72,14 +71,59 @@ MyApp.View = (function(app) {
         },
 
         render: function() {
+            console.log(9);
             this.$el.html(_.template($('#car-template').html(), this.model.toJSON()));
             return this;
         },
 
+        destroyCar: function() {
+            this.model.destroy();
+        },
+
         deleteCar: function() {
-            console.log('dddddddddd');
-            console.log(this);
             this.remove();
+        },
+
+        editCar: function() {
+            var dialogView = new app.View.carDialog({model: this.model});
+        }
+
+    });
+
+    exports.carDialog = Backbone.View.extend({
+
+        el:  '#dialog',
+
+        events: {
+            'click': 'updateModel',
+            'change input[name="color"]': 'updateModel'
+        },
+
+        initialize: function(param) {
+            this.model = param.model; 
+            this.model.on('invalid', this.invalid, this);
+            this.render();   
+        },
+
+        render: function() {
+            var _this = this;
+            this.$el.html($(_.template($('#dialog-template').html(), this.model.toJSON()))).dialog({
+                width: 400,
+                buttons: {
+                    'save': function() {
+                        _this.model.save();
+                        $(this).dialog('close');
+                    }
+                }
+            });
+        },
+
+        updateModel: function(e) {
+            this.model.set($(e.target).attr('name'), $(e.target).val());
+        },
+
+        invalid: function(model, error) {
+            alert(error);
         }
 
     });

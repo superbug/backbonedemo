@@ -14,8 +14,19 @@ MyApp.Model = (function(app) {
 
     exports.car = Backbone.Model.extend({
         
-        initialize: function(aa) {
+        initialize: function(attr) {
             
+        },
+
+        validate: function(attr) {
+            var result;
+            if (attr.name == '') {
+                result = 'name required';
+            }
+            if (attr.color == '') {
+                result = 'color required';
+            }
+            return result;
         }
 
     });

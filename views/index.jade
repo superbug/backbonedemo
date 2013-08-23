@@ -10,13 +10,13 @@ block content
   div#categorylist
     ul
         li 
-            a(href='#!/11111111')  1111111111
+            a(href='#!/11111111')  奔驰
         li 
-            a(href='#!/22222222')  2222222222
+            a(href='#!/22222222')  奥迪A8
         li 
-            a(href='#!/33333333')  3333333333
+            a(href='#!/33333333')  宝马7
         li 
-            a(href='#!/44444444')  4444444444
+            a(href='#!/44444444')  捷豹
 
   div#carlist
     input(type='text', name='filterCar')
@@ -38,14 +38,24 @@ block content
         //-     td 55
         //-     td 66
 
+  div#dialog 
+  
   script(type='text/template', id='car-template')
       td <%- id %>
       td <%- name %>
       td <%- color %>
       td <%- size %>
       td 
-        a.btn edit 
-        a.btn delete
+        a.btn.edit edit 
+        a.btn.delete delete
+
+  script(type='text/template', id='dialog-template')
+    div#car-dialog-template
+      ul
+        li name: <input type="text" value="<%- name %>" name="name">
+        li color: <input type="text" value="<%- color %>" name="color">
+        li size: <input type="text" value="<%- size %>" name="size">
+
 
 
 

@@ -18,7 +18,7 @@ MyApp.Router = (function(app) {
         showCategory: function(category) {
             if (app.carCollectionInstance) {
                 app.carCollectionInstance.reset([]);
-                $('#carlist tbody').html('');
+                $('#carlist tbody tr:gt(0)').remove('');
             }
             app.carCollectionInstance = new app.Collection.cars();
             app.carCollectionInstance.url = '/cars/' + category;
