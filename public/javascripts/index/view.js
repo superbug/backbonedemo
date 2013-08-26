@@ -95,8 +95,7 @@ MyApp.View = (function(app) {
         el:  '#dialog',
 
         events: {
-            'click': 'updateModel',
-            'change input[name="color"]': 'updateModel'
+            'change input': 'updateModel'
         },
 
         initialize: function(param) {
