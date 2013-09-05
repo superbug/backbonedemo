@@ -1,4 +1,3 @@
-
 /*
  * GET home page.
  */
@@ -9,14 +8,12 @@ var connection = mysql.createConnection({
         user: 'root',
         socketPath: '/var/run/mysqld/mysqld.sock',  
         password: '123456',
-        database: 'test'
+        database: 'cars'
 });
 
-connection.connect(function(err) {
-    console.log(err);    
-});
+connection.connect();
 
-connection.query('SELECT * from  `wine`', function(err, rows, fields) {
+connection.query('SELECT * from  `cars`', function(err, rows, fields) {
   if (err) throw err;
   data = rows;
 });
