@@ -1,4 +1,4 @@
 Backbone  Demo
 ============
 
-A sample demo established with backbone and express.
+A sample demo based on backbone and express.
